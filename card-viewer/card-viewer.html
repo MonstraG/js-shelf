@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Card viewer</title>
+</head>
+
+<body>
+
+<main>
+  <div id="hover-container" class="container">
+    <img src="card.png" id="hoverable-card" class="card" alt="card" draggable="false">
+  </div>
+</main>
+
+</body>
+</html>
+
+<style>
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .card {
+    height: 80vh
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.75);
+    transition: all 0.3s;
+    cursor: pointer;
+    filter: drop-shadow(0 0 1rem #55555555);
+  }
+
+  .container:hover {
+    transform: scale(1.0);
+  }
+</style>
+
+<script>
+  const hoverContainer = document.getElementById("hover-container");
+  const hoverableCard = document.getElementById("hoverable-card");
+
+  let constrain = window.innerHeight * 0.8 / 2;
+  window.addEventListener("resize", () => constrain = window.innerHeight * 0.8 / 2)
+
+  const calcTransformAngles = (x, y, box) => {
+    const transformX = -(y - box.y - (box.height / 2)) / constrain;
+    const transformY = (x - box.x - (box.width / 2)) / constrain;
+    return {transformX, transformY}
+  }
+
+  const calcShadowPos = (x, y, box) => {
+    const shadowX = (box.x + (box.width / 2) - x) / 10;
+    const shadowY = (box.y + (box.height / 2) - y) / 10;
+    return {shadowY, shadowX}
+  }
+
+  hoverContainer.onmousemove = e => {
+    window.requestAnimationFrame(() => {
+      const cardRect = hoverableCard.getBoundingClientRect();
+      const {transformX, transformY} = calcTransformAngles(e.clientX, e.clientY, cardRect)
+      hoverableCard.style.transform = `perspective(100px) rotateX(${transformX}deg) rotateY(${transformY}deg)`;
+
+      const {shadowX, shadowY} = calcShadowPos(e.clientX, e.clientY, cardRect)
+      hoverableCard.style.filter = `drop-shadow(${shadowX}px ${shadowY}px 1rem #55555555)`
+    });
+  };
+
+  hoverContainer.onmouseleave = e => {
+    window.requestAnimationFrame(() => {
+      hoverableCard.style.transform = "perspective(100px)"
+      hoverableCard.style.filter = `drop-shadow(0 0 1rem #55555555)`
+    });
+  }
+</script>
