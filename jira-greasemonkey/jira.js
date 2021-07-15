@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Add links to jira
-// @version  6.0
+// @version  7.0
 // @grant    none
 // ==/UserScript==
 
@@ -44,7 +44,7 @@
    */
   const compactHeaders = () => {
     const headerWrapper = document.querySelector(`div[data-test-id="software-backlog.page-header"]`);
-    if (headerWrapper.getAttribute("data-ars-upd") === "true") return;
+    if (!headerWrapper || headerWrapper.getAttribute("data-ars-upd") === "true") return;
 
     const headerBlock = headerWrapper.children[0];
     headerBlock.style.marginTop = "16px"; //originally 24px
@@ -56,15 +56,33 @@
     headerWrapper.setAttribute("data-ars-upd", "true");
   };
 
-  //all the funcitons to be run
+  /**
+   * Board view for jira has 40px folds on the left and right that introduce scroll and hide small parts of the board when
+   * it's exactly half of a 1920 screen with only 3 columns.
+   * This gets rid of them
+   */
+  const hideBoardFolds = () => {
+    const boardWrapper = document.querySelector(`div[data-test-id="platform-board-kit.ui.board.scroll.board-scroll"]`);
+    if (!boardWrapper || boardWrapper.getAttribute("data-ars-upd") === "true") return;
+
+    const boardSection = [...boardWrapper.children].find(ch => ch.tagName === "SECTION");
+    const [leftFold, , plus, rightFold] = [...boardSection.children]; //unused variable is `board`
+    leftFold.style.display = "none";
+    rightFold.style.display = "none";
+
+    //also remove unneeded right padding on plus
+    const plusButtonWrapperWithPadding = plus.children[0].children[0];
+    plusButtonWrapperWithPadding.style.paddingRight = "0";
+
+    boardWrapper.setAttribute("data-ars-upd", "true");
+  }
+
+  //all the functions to be run
   const funcs = [
     addLinks,
     compactHeaders,
+    hideBoardFolds
   ]
-
-  const run = () => {
-    funcs.forEach(func => func());
-  }
-
-  setInterval(run, 1000)
+  const run = () => funcs.forEach(func => func())
+  setInterval(run, 3000)
 })();
