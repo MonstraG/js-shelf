@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Add links to jira
-// @version  7.1
+// @version  7.2
 // @grant    none
 // ==/UserScript==
 
