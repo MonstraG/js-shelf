@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Add links to jira
-// @version  7.0
+// @version  7.1
 // @grant    none
 // ==/UserScript==
 
@@ -84,5 +84,6 @@
     hideBoardFolds
   ]
   const run = () => funcs.forEach(func => func())
+  run();
   setInterval(run, 3000)
 })();
