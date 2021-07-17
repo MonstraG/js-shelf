@@ -47,12 +47,21 @@
     if (!headerWrapper || headerWrapper.getAttribute("data-ars-upd") === "true") return;
 
     const headerBlock = headerWrapper.children[0];
-    headerBlock.style.marginTop = "16px"; //originally 24px
-    headerBlock.style.marginBottom = "-8px"; //originally 16px
+    headerBlock.style.marginTop = "16px"
+    headerBlock.style.marginBottom = "0";
     const header = headerBlock.children[1];
     const filters = headerBlock.children[headerBlock.children.length - 1];
     header.style.display = "inline-flex";
     filters.style.display = "inline-flex";
+
+    const filtersWrapper = filters.children[0];
+    filtersWrapper.style.marginBottom = "0";
+    filtersWrapper.style.marginTop = "0";
+
+    const backlogWrapper = header.children[0];
+    backlogWrapper.style.marginBottom = "0";
+    backlogWrapper.children[0].children[0].style.marginBottom = "0" // h1 > div
+
     headerWrapper.setAttribute("data-ars-upd", "true");
   };
 
