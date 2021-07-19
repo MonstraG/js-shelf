@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Add links to jira
-// @version  7.3
+// @version  8.0
 // @grant    none
 // ==/UserScript==
 
@@ -88,11 +88,24 @@
     boardWrapper.setAttribute("data-ars-upd", "true");
   }
 
+  /**
+   * If you click on a epic in roadmap, issue viewer on the right is too small. This expands it.
+   */
+  const expandRoadmapIssueViewer = () => {
+    const viewerWrapper = document.querySelector(`div[data-test-id="roadmap.standard-roadmap.table-overlay.panel.container"]`);
+    if (!viewerWrapper || viewerWrapper.getAttribute("data-ars-upd") === "true") return;
+
+    // if bigger than this, their layout changes into two columns.
+    viewerWrapper.style.width = "600px";
+    viewerWrapper.setAttribute("data-ars-upd", "true");
+  }
+
   //all the functions to be run
   const funcs = [
     addLinks,
     compactHeaders,
-    hideBoardFolds
+    hideBoardFolds,
+    expandRoadmapIssueViewer
   ]
   const run = () => funcs.forEach(func => func())
   run();
