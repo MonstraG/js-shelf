@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Add links to jira
-// @version  8.0
+// @version  8.1
 // @grant    none
 // ==/UserScript==
 
@@ -45,8 +45,8 @@
    * Moves the filters in the backlog up to be able to show more issues.
    */
   const compactHeaders = () => {
-    const headerWrapper = document.querySelector(`div[data-test-id="software-backlog.page-header"]`);
-    if (!headerWrapper || headerWrapper.getAttribute("data-ars-upd") === "true") return;
+    const headerWrapper = getByAttr("software-backlog.page-header");
+    if (!headerWrapper) return;
 
     const headerBlock = headerWrapper.children[0];
     headerBlock.style.marginTop = "16px"
@@ -62,9 +62,9 @@
 
     const backlogWrapper = header.children[0];
     backlogWrapper.style.marginBottom = "0";
-    backlogWrapper.children[0].children[0].style.marginBottom = "0" // h1 > div
+    backlogWrapper.children[0].children[0].style.marginBottom = "0"; // h1 > div
 
-    headerWrapper.setAttribute("data-ars-upd", "true");
+    setUpdatedAttr(headerWrapper);
   };
 
   /**
@@ -73,8 +73,8 @@
    * This gets rid of them
    */
   const hideBoardFolds = () => {
-    const boardWrapper = document.querySelector(`div[data-test-id="platform-board-kit.ui.board.scroll.board-scroll"]`);
-    if (!boardWrapper || boardWrapper.getAttribute("data-ars-upd") === "true") return;
+    const boardWrapper = getByAttr("platform-board-kit.ui.board.scroll.board-scroll");
+    if (!boardWrapper) return;
 
     const boardSection = [...boardWrapper.children].find(ch => ch.tagName === "SECTION");
     const [leftFold, , plus, rightFold] = [...boardSection.children]; //unused variable is `board`
@@ -85,20 +85,27 @@
     const plusButtonWrapperWithPadding = plus.children[0].children[0];
     plusButtonWrapperWithPadding.style.paddingRight = "0";
 
-    boardWrapper.setAttribute("data-ars-upd", "true");
+    setUpdatedAttr(boardWrapper);
   }
 
   /**
    * If you click on a epic in roadmap, issue viewer on the right is too small. This expands it.
    */
   const expandRoadmapIssueViewer = () => {
-    const viewerWrapper = document.querySelector(`div[data-test-id="roadmap.standard-roadmap.table-overlay.panel.container"]`);
-    if (!viewerWrapper || viewerWrapper.getAttribute("data-ars-upd") === "true") return;
+    const viewerWrapper = getByAttr("roadmap.standard-roadmap.table-overlay.panel.container");
+    if (!viewerWrapper) return;
 
     // if bigger than this, their layout changes into two columns.
     viewerWrapper.style.width = "600px";
-    viewerWrapper.setAttribute("data-ars-upd", "true");
+    setUpdatedAttr(viewerWrapper);
   }
+
+  const getByAttr = (attr) => {
+    const viewerWrapper = document.querySelector(`div[data-test-id="${attr}"]`);
+    return !viewerWrapper || viewerWrapper.getAttribute("data-ars-upd") === "true" ? null : viewerWrapper;
+  }
+
+  const setUpdatedAttr = (el) => el.setAttribute("data-ars-upd", "true");
 
   //all the functions to be run
   const funcs = [
@@ -106,8 +113,8 @@
     compactHeaders,
     hideBoardFolds,
     expandRoadmapIssueViewer
-  ]
-  const run = () => funcs.forEach(func => func())
+  ];
+  const run = () => funcs.forEach(func => func());
   run();
-  setInterval(run, 3000)
+  setInterval(run, 3000);
 })();
