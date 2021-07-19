@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Add links to jira
-// @version  7.2
+// @version  7.3
 // @grant    none
 // ==/UserScript==
 
@@ -8,6 +8,7 @@
 (() => {
   /**
    * Attempts to find all of the spans for project tasks in the page, and transform them into direct links.
+   * also colors them blue for visibility
    */
   const addLinks = () => {
     const projectsPrefix = "/jira/software/projects/"
@@ -34,6 +35,7 @@
       link.addEventListener("click", (event) => {
         event.stopPropagation(); // to not open a modal and just navigate by link
       })
+      link.style.color = "#0645AD";
       span.parentNode.replaceChild(link, span);
     })
     return spans.length === 0;
