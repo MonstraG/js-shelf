@@ -1,10 +1,14 @@
 // ==UserScript==
-// @name     Add links to jira
-// @version  8.1
-// @grant    none
+// @name         Jira improver
+// @namespace    http://tampermonkey.net/
+// @version      8.1
+// @description  Improves things about jira
+// @author       Arseny Garelyshev
+// @match        https://*.atlassian.net/jira/*
+// @icon         https://aid-frontend.prod.atl-paas.net/atlassian-id/front-end/5.0.246/favicon.ico
+// @grant        none
 // ==/UserScript==
 
-// Supposed to run on atlassian.net/jira/.
 (() => {
   /**
    * Attempts to find all of the spans for project tasks in the page, and transform them into direct links.
