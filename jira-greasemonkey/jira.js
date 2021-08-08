@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jira improver
 // @namespace    http://tampermonkey.net/
-// @version      8.1
+// @version      9.0
 // @description  Improves things about jira
 // @author       Arseny Garelyshev
 // @match        https://*.atlassian.net/jira/*
@@ -89,7 +89,8 @@
     const plusButtonWrapperWithPadding = plus.children[0].children[0];
     plusButtonWrapperWithPadding.style.paddingRight = "0";
 
-    setUpdatedAttr(boardWrapper);
+    //set in showEpicsInBoard
+    // setUpdatedAttr(boardWrapper);
   }
 
   /**
@@ -104,6 +105,55 @@
     setUpdatedAttr(viewerWrapper);
   }
 
+  /**
+   * Inserts an iframe showing the first column of the roadmap before all other columns.
+   */
+  const showEpicsInBoard = () => {
+    const boardWrapper = getByAttr("platform-board-kit.ui.board.scroll.board-scroll")
+    if (!boardWrapper) return;
+
+    const columns = boardWrapper.querySelector("section")
+    columns.style.padding = "0 0 0 20px";
+
+    //add the thing
+    const iframe = document.createElement("iframe");
+    iframe.id = "ars-custom-iframe-1";
+    iframe.setAttribute("src", "/jira/software/projects/VUL/boards/1/roadmap");
+    iframe.height = "1000";
+    iframe.width = "440";
+    iframe.style.border = "none";
+    iframe.style.transition = "all 0.2s";
+    columns.insertBefore(iframe, columns.firstChild);
+
+    iframe.addEventListener("load", () => {
+      iframe.contentDocument.querySelector("head").appendChild(document.createElement("style")).innerHTML = `
+      #ak-main-content > div > div {
+        padding: 0;
+      }
+      #jira-frontend > div > div {
+       display: block;
+      }
+      #ak-jira-navigation, 
+      #ak-side-navigation,
+      #ak-main-content > div > div > div:first-child,
+      #sr-timeline > div > :not(:first-child) {
+        display: none;
+      }
+      #sr-timeline > div > div:first-child {
+        width: 270px !important;
+      }
+      #sr-timeline > div > div:first-child > div:first-child > div:last-child {
+        display: none;
+      }
+      #ak-main-content > div > div > div:last-child > div:last-child {
+        width: 440px !important;
+      }
+      `;
+    });
+
+    setUpdatedAttr(boardWrapper);
+  }
+
   const getByAttr = (attr) => {
     const viewerWrapper = document.querySelector(`div[data-test-id="${attr}"]`);
     return !viewerWrapper || viewerWrapper.getAttribute("data-ars-upd") === "true" ? null : viewerWrapper;
@@ -116,7 +166,8 @@
     addLinks,
     compactHeaders,
     hideBoardFolds,
-    expandRoadmapIssueViewer
+    expandRoadmapIssueViewer,
+    showEpicsInBoard
   ];
   const run = () => funcs.forEach(func => func());
   run();
