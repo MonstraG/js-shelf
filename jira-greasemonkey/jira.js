@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jira improver
 // @namespace    http://tampermonkey.net/
-// @version      9.0
+// @version      9.1
 // @description  Improves things about jira
 // @author       Arseny Garelyshev
 // @match        https://*.atlassian.net/jira/*
@@ -161,13 +161,34 @@
 
   const setUpdatedAttr = (el) => el.setAttribute("data-ars-upd", "true");
 
+  /**
+   * Changes styles for issue rows on small screens
+   */
+  const addImprovedIssueStyles = () => {
+    const id = "ars-issue-styles"
+    const existing = document.getElementById("ars-issue-styles");
+    if (existing) return;
+
+    const styles = document.createElement("style");
+    styles.id = id;
+    document.querySelector("head").appendChild(styles).innerHTML = `
+        @media (max-width: 1400px) {
+          div[data-test-id="issue.views.issue-details.issue-layout.issue-layout"] div[data-rbd-draggable-id] div,
+          div[data-test-id="issue.views.issue-details.issue-layout.issue-layout"] div[data-rbd-draggable-id] a {
+            padding: 0;
+          }
+        }
+    `;
+  }
+
   //all the functions to be run
   const funcs = [
     addLinks,
     compactHeaders,
     hideBoardFolds,
     expandRoadmapIssueViewer,
-    showEpicsInBoard
+    showEpicsInBoard,
+    addImprovedIssueStyles
   ];
   const run = () => funcs.forEach(func => func());
   run();
