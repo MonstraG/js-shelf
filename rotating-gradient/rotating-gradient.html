@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Card viewer</title>
+</head>
+
+<body>
+
+  <main>
+    <div class="border-wrap" id="border-wrap">
+      <div class="border-wrap-content">
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
+
+<style>
+  html, body {
+    margin: 0
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #222;
+  }
+
+  .border-wrap {
+    background: linear-gradient(45deg, #f72585, #4cc9f0);
+    border-radius: 8px;
+    transition: background 0.1s;
+  }
+
+  .border-wrap-content {
+    width: 100px;
+    height: 80px;
+    margin: 8px;
+    background-color: #222;
+    border-radius: 6px;
+  }
+
+</style>
+
+<script>
+  const borderWrap = document.getElementById("border-wrap");
+  let center = {x: window.innerWidth / 2, y: window.innerHeight / 2};
+  window.addEventListener("resize", () =>
+    center = {x: window.innerWidth / 2, y: window.innerHeight / 2})
+
+  const setBorderWrapBgRotation = (rad) =>
+    borderWrap.style.background = `linear-gradient(${rad}rad, #f72585, #4cc9f0)`;
+
+  const calcGradientTurn = (e) => findAngle(e.clientX, e.clientY) + 45;
+
+  window.onmousemove = e =>
+    window.requestAnimationFrame(() => setBorderWrapBgRotation(calcGradientTurn(e)));
+
+  const twoPi = 6.283185308; // 2 * Math.PI
+  const findAngle = (px, py) => {
+    const x = px - center.x;
+    const y = py - center.y;
+    const angle = Math.acos(x / Math.sqrt(x * x + y * y));
+    return y < 0 ? twoPi - angle : angle;
+  }
+</script>
