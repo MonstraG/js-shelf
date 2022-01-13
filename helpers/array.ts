@@ -13,7 +13,6 @@ export const pop = <T>(
   return [def, copy] as const;
 };
 
-
 export const sum = (array: number[]): number => array.reduce((acc, next) => acc + next, 0);
 export const max = (array: number[]): number => Math.max.apply(null, array);
 export const min = (array: number[]): number => Math.min.apply(null, array);
@@ -23,6 +22,9 @@ export const newArr = (length: number) => Array.from({ length });
 
 export const unique = <T>(array: T[]): T[] =>
   array.filter((item: T, index: number) => array.indexOf(item) == index);
+
+export const first = <T>(array: T[]): T | null =>
+  array && array.length > 0 ? array[0] : null;
 
 //splits array into 2 parts based on predicate, first corresponds to true, second to false
 export const fork = <T>(
@@ -53,7 +55,7 @@ export const groupBy = <K extends ObjectKey, TItem extends Record<K, ObjectKey>>
 
 
 
-// zip([1,2,3], [a,b,c]) => [[1, a], [2, b], [3, c]]
+// zip([1,2,3], [a,b]) => [[1, a], [2, b], [3, undefined]]
 export const zip = <T1,T2>(array: T1[], array2: T2[]): [T1, T2][] => array.map((el, index) => [el, array2[index]])
 
 // zipShort([1,2], [a,b,c]) => [[1, a], [2, b]]
