@@ -27,7 +27,7 @@ export namespace Arr {
   export const first = <T>(array: T[]): T | null =>
     array && array.length > 0 ? array[0] : null;
 
-//splits array into 2 parts based on predicate, first corresponds to true, second to false
+  //splits array into 2 parts based on predicate, first corresponds to true, second to false
   export const fork = <T>(
     array: T[],
     predicate: (element: T, index: number, array: T[]) => boolean
@@ -54,10 +54,10 @@ export namespace Arr {
       {} as Record<ObjectKey, TItem[]>
     );
 
-// zip([1,2,3], [a,b]) => [[1, a], [2, b], [3, undefined]]
+  // zip([1,2,3], [a,b]) => [[1, a], [2, b], [3, undefined]]
   export const zip = <T1,T2>(array: T1[], array2: T2[]): [T1, T2][] => array.map((el, index) => [el, array2[index]])
 
-// zipShort([1,2], [a,b,c]) => [[1, a], [2, b]]
+  // zipShort([1,2], [a,b,c]) => [[1, a], [2, b]]
   export const zipShort = <T1,T2>(array: T1[], array2: T2[]): [T1, T2][] => {
     const minLength = Math.min(array.length, array2.length);
     return array.slice(0, minLength).map((el, index) => [el, array2[index]])

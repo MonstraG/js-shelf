@@ -1,1 +1,13 @@
 /.idea/
+/node_modules/
+yarn-debug.log*
+yarn-error.log*
+/.yarn/
+# yarn v2
+.yarn/*
+# !.yarn/cache # Uncomment for zero-install
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.* # Comment for zero-install
