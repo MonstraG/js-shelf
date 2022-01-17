@@ -17,11 +17,13 @@ export namespace Arr {
 	export const sum = (array: number[]): number => array.reduce((acc, next) => acc + next, 0);
 	export const max = (array: number[]): number => Math.max.apply(null, array);
 	export const min = (array: number[]): number => Math.min.apply(null, array);
-	export const avg = (array: number[]): number => sum(array) / array.length;
+	export const avg = (array: number[]): number => sum(array) / array.length || 0;
 
 	export const newArr = (length: number) => Array.from({ length });
 
-	export const unique = <T>(array: T[]): T[] =>
+	export const unique = <T>(array: T[]): T[] => [...new Set(array)];
+
+	export const uniqueES5 = <T>(array: T[]): T[] =>
 		array.filter((item: T, index: number) => array.indexOf(item) === index);
 
 	export const first = <T>(array: T[]): T | null => (array && array.length > 0 ? array[0] : null);
@@ -69,4 +71,3 @@ export namespace Arr {
 	export const diff = <T>(a: T[], b: T[]): T[] => a.filter((e) => !b.includes(e));
 	export const intersect = <T>(a: T[], b: T[]): T[] => a.filter((e) => b.includes(e));
 }
-
