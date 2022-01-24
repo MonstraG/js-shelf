@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 1000px">
+<head>
+  <link rel="preconnect" href="https://assets.standardresume.co" crossorigin="anonymous"/>
+  <link rel="preload"
+        href="https://assets.standardresume.co/raw/upload/v1613930712/fonts/inter-var-latin_slr2rc.woff2" as="font"
+        type="font/woff2" crossorigin="anonymous"/>
+  <style>
+    /* Copied and modified from https://fonts.googleapis.com/css2?family=Inter:wght@400..700 */
+    /* latin-ext */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1613930712/fonts/inter-var-latin-ext_e4rknq.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1613930712/fonts/inter-var-latin_slr2rc.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* italic latin-ext */
+    @font-face {
+      font-family: 'Inter';
+      font-style: italic;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1628265386/fonts/inter-italic-var-latin-ext_nenjsi.woff2) format('woff2');
+      unicode-range: U+0100-0149, U+014A-01C4, U+01C5-0250, U+0259,
+      U+1E00-1F00, U+2020, U+20A0-20AC, U+20AD-20C0, U+2113, U+2C7C, U+2C7F,
+      U+A7FF;
+      font-named-instance: 'Italic';
+    }
+
+    /* italic latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: italic;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1628265386/fonts/inter-italic-var-latin_qedl54.woff2) format('woff2');
+      unicode-range: U+0000-007F, U+00A0-0100, U+0131, U+0152-0154,
+      U+02BB-02BD, U+02C6, U+02DA, U+02DC, U+2000-200C, U+2010-2028,
+      U+202F-2060, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+FEFF;
+      font-named-instance: 'Italic';
+    }
+  </style>
+  <style>
+    /* https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap */
+
+    /* latin-ext */
+    @font-face {
+      font-family: 'IBM Plex Mono';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1613933475/fonts/ibm-plex-300-latin-ext_yk9mx1.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'IBM Plex Mono';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1613933475/fonts/ibm-plex-300-latin_niyzcs.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin-ext */
+    @font-face {
+      font-family: 'IBM Plex Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1613933474/fonts/ibm-plex-500-latin-ext_hryzso.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'IBM Plex Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://assets.standardresume.co/raw/upload/v1613933474/fonts/ibm-plex-500-latin_mu9ky0.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+  <link rel="icon shortcut" type="image/x-icon" href="/icons/favicon.ico"/>
+  <link rel="icon" type="image/png" href="/icons/favicon-192.png" sizes="192x192"/>
+  <link rel="icon" type="image/png" href="/icons/favicon-128.png" sizes="128x128"/>
+  <link rel="icon" type="image/png" href="/icons/favicon-64.png" sizes="64x64"/>
+  <link rel="icon" type="image/png" href="/icons/favicon-32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="/icons/favicon-32.png" sizes="32x32"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180.png"/>
+  <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple-icon-167.png"/>
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152.png"/>
+  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120.png"/>
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#000000"/>
+  <meta name="apple-mobile-web-app-title" content="Standard Resume"/>
+  <meta name="theme-color" content="#2a3ffb"/>
+  <meta name="msapplication-TileColor" content="#2a3ffb"/>
+  <meta name="viewport" content="width=device-width"/>
+  <meta charSet="utf-8"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@standardresume"/>
+  <meta property="og:url" content="https://standardresume.co/r/QvRsTaCQjdpb32kKtdYgN"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="Standard Resume"/>
+  <link rel="canonical" href="https://standardresume.co/r/QvRsTaCQjdpb32kKtdYgN"/>
+  <title>Arseny Garelyshev&#x27;s Resume | Developer at Lifekeys</title>
+  <meta name="robots" content="index,follow"/>
+  <meta name="googlebot" content="index,follow"/>
+  <meta name="description" content="View Arseny Garelyshev&#x27;s web resume on Standard Resume."/>
+  <meta property="og:title" content="Arseny Garelyshev&#x27;s Resume | Developer at Lifekeys"/>
+  <meta property="og:description" content="View Arseny Garelyshev&#x27;s web resume on Standard Resume."/>
+  <meta property="og:type" content="profile"/>
+  <meta property="profile:first_name" content="Arseny"/>
+  <meta property="profile:last_name" content="Garelyshev"/>
+  <meta property="og:image" content="https://app.standardresume.co/assets-api/v2/preview/SP-arOAS047Y7BLjJgHnO"/>
+  <meta property="og:image:width" content="2400"/>
+  <meta property="og:image:height" content="1260"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="anonymous"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
+  <meta name="next-head-count" content="24"/>
+  <noscript data-n-css=""></noscript>
+</head>
+<body style="width: 1000px">
+  <div id="__next" data-reactroot="">
+    <style data-emotion-css="1xwpiaj">
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        color: rgba(0, 0, 0, 1);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        background-color: rgba(242, 247, 252, 1);
+        font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 1, 'kern' 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-variant-ligatures: contextual common-ligatures;
+        font-kerning: normal;
+      }
+
+      body {
+        font-size: 14px;
+      }
+
+      body {
+        font-size: 15px;
+      }
+    </style>
+    <style data-emotion-css="be9d8r">.css-be9d8r {
+      box-sizing: border-box;
+      margin: 0;
+      min-width: 0;
+      background-color: #e4ebf1;
+      min-height: 100vh;
+      min-widht: 100vw;
+    }</style>
+    <div class="css-be9d8r">
+      <style data-emotion-css="1jmx1h9">.css-1jmx1h9 {
+        box-sizing: border-box;
+        margin: 0;
+        min-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 0;
+      }
+
+      </style>
+      <div class="css-1jmx1h9">
+        <style data-emotion-css="1qbz534">.css-1qbz534 {
+          box-sizing: border-box;
+          margin: 0;
+          min-width: 0;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          padding-left: 16px;
+          padding-right: 16px;
+          min-height: 0;
+        }
+
+        .css-1qbz534 {
+          padding-left: 16px;
+          padding-right: 16px;
+          min-height: 0;
+        }
+
+        .css-1qbz534 {
+          padding-left: 0;
+          padding-right: 0;
+          min-height: 42px;
+        }
+        </style>
+        <style data-emotion-css="hpf9g4">.css-hpf9g4 {
+          box-sizing: border-box;
+          margin: 0;
+          min-width: 0;
+          margin: 0 auto;
+          width: 100%;
+          background-color: #ffffff;
+          overflow: hidden;
+          min-height: auto;
+        }</style>
+        <div class="css-hpf9g4">
+          <style data-emotion-css="1jleruk">.css-1jleruk {
+            box-sizing: border-box;
+            margin: 0;
+            min-width: 0;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 990px;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+          }
+
+          </style>
+          <div class="css-1jleruk">
+            <style>
+              @font-face {
+                font-family: & #x27;
+                InterPDF & #x27;;
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/latin-regular.woff2&#x27;) format(& quot;
+                woff2 & quot;),
+              url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/latin-regular.woff&#x27;) format(&quot;
+                woff & quot;);
+              }
+
+              @font-face {
+                font-family: & #x27;
+                InterPDF & #x27;;
+                font-style: italic;
+                font-weight: 400;
+                font-display: swap;
+                src: url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/regular-italic.woff2&#x27;) format(& quot;
+                woff2 & quot;),
+              url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/regular-italic.woff&#x27;) format(&quot;
+                woff & quot;);
+              }
+
+              @font-face {
+                font-family: & #x27;
+                InterPDF & #x27;;
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/latin-semibold.woff2&#x27;) format(& quot;
+                woff2 & quot;),
+              url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/latin-semibold.woff&#x27;) format(&quot;
+                woff & quot;);
+              }
+
+              @font-face {
+                font-family: & #x27;
+                InterPDF & #x27;;
+                font-style: italic;
+                font-weight: 600;
+                font-display: swap;
+                src: url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/semibold-italic.woff2&#x27;) format(& quot;
+                woff2 & quot;),
+              url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/semibold-italic.woff&#x27;) format(&quot;
+                woff & quot;);
+              }
+
+              @font-face {
+                font-family: & #x27;
+                InterPDF & #x27;;
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/latin-bold.woff2&#x27;) format(& quot;
+                woff2 & quot;),
+              url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/latin-bold.woff&#x27;) format(&quot;
+                woff & quot;);
+              }
+
+              @font-face {
+                font-family: & #x27;
+                InterPDF & #x27;;
+                font-style: italic;
+                font-weight: 700;
+                font-display: swap;
+                src: url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/bold-italic.woff2&#x27;) format(& quot;
+                woff2 & quot;),
+              url(&#x27;https://assets.standardresume.co/raw/upload/v1638309450/fonts/inter/bold-italic.woff&#x27;) format(&quot;
+                woff & quot;);
+              }
+            </style>
+            <style data-emotion-css="1l9ad6b">.css-1l9ad6b {
+              box-sizing: border-box;
+              margin: 0;
+              min-width: 0;
+              margin-bottom: 40px;
+            }
+
+            .css-1l9ad6b {
+              margin-bottom: 48px;
+            }
+            </style>
+            <header class="pdf-resume-header css-1l9ad6b">
+              <style data-emotion-css="1spxdg6">.css-1spxdg6 {
+                box-sizing: border-box;
+                margin: 0;
+                min-width: 0;
+                margin-bottom: 30px;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+              }
+
+              .css-1spxdg6 {
+                -webkit-flex-wrap: nowrap;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+              }
+              </style>
+              <div class="css-1spxdg6">
+                <style data-emotion-css="9qbvy8">.css-9qbvy8 {
+                  box-sizing: border-box;
+                  margin: 0;
+                  min-width: 0;
+                  width: 100%;
+                  -webkit-box-flex: 0;
+                  -webkit-flex-grow: 0;
+                  -ms-flex-positive: 0;
+                  flex-grow: 0;
+                  -webkit-flex-shrink: 0;
+                  -ms-flex-negative: 0;
+                  flex-shrink: 0;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-align-items: center;
+                  -webkit-box-align: center;
+                  -ms-flex-align: center;
+                  align-items: center;
+                  margin-bottom: 24px;
+                }
+
+                .css-9qbvy8 {
+                  width: 220px;
+                  margin-bottom: 0;
+                }
+                </style>
+
+                <div class="css-9qbvy8">
+                  <style data-emotion-css="10aif3s">
+                    .css-10aif3s {
+                      box-sizing: border-box;
+                      margin: 0;
+                      min-width: 0;
+                      max-width: 100%;
+                      border-radius: 999px;
+                      height: 48px;
+                      width: 48px;
+                      object-fit: cover;
+                    }
+                  </style>
+                  <img
+                      src="https://assets.standardresume.co/image/fetch/w_300,h_300,c_fill,g_face,f_png/https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Ffirebase-standardresume.appspot.com%2Fo%2Fusers%252FrYtaAq42HiSF40P9f6OUOpJeilr2%252Ffiles%252Fo-xH4BRZiS52KRllgk-A5.png%3Falt%3Dmedia%26token%3D2c215577-8ae8-4b2f-9c77-e1c677391cb3"
+                      width="48" height="48" class="css-10aif3s"/>
+                </div>
+                <style data-emotion-css="cduc2o">
+                  .css-cduc2o {
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    padding-right: 0;
+                  }
+
+                  .css-cduc2o {
+                    display: grid;
+                    grid-auto-flow: column;
+                    grid-auto-columns: max-content;
+                    grid-template-rows:1fr 1fr;
+                    -webkit-column-gap: 48px;
+                    column-gap: 48px;
+                    -webkit-box-flex: 1;
+                    -webkit-flex-grow: 1;
+                    -ms-flex-positive: 1;
+                    flex-grow: 1;
+                    -webkit-box-pack: end;
+                    -webkit-justify-content: flex-end;
+                    -ms-flex-pack: end;
+                    justify-content: flex-end;
+                  }
+
+
+                  .css-cduc2o {
+                    padding-right: 48px;
+                  }
+                </style>
+                <div class="css-cduc2o">
+                  <style data-emotion-css="kcsclw">.css-kcsclw {
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    font-family: InterPDF, -apple-system, sans-serif;
+                    line-height: 1.6;
+                    font-weight: 300;
+                    color: #434343;
+                    font-size: 18px;
+                  }</style>
+                  <div class="css-kcsclw">Yekaterinburg, Russia</div>
+                  <div class="css-kcsclw">monstrag@gmail.com</div>
+
+                  <div class="css-kcsclw">+7 (922) 164-88-48</div>
+                  <div class="css-kcsclw">
+                    <style data-emotion-css="1cuak6k">.css-1cuak6k {
+                      box-sizing: border-box;
+                      margin: 0;
+                      min-width: 0;
+                      color: inherit;
+                      -webkit-text-decoration: inherit;
+                      text-decoration: inherit;
+                      font-size: inherit;
+                      font-weight: inherit;
+                      overflow-wrap: break-word;
+                    }
+
+                    .css-1cuak6k:hover {
+                      opacity: 0.7;
+                    }</style>
+                    <a href="http://linkedin.com/in/arseny-garelyshev-086275199"
+                       target="_blank" rel="noopener noreferrer nofollow ugc"
+                       class="css-1cuak6k">linkedin.com/in/arseny-garelyshev-086275199</a>
+                  </div>
+
+                </div>
+              </div>
+              <style data-emotion-css="8tmwdp">.css-8tmwdp {
+                box-sizing: border-box;
+                margin: 0;
+                min-width: 0;
+                font-family: InterPDF, -apple-system, sans-serif;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #2A3235;
+                font-weight: 600;
+                line-height: 1.4;
+                font-family: InterPDF, -apple-system, sans-serif;
+                font-size: 20px;
+                -webkit-letter-spacing: 0.01em;
+                -moz-letter-spacing: 0.01em;
+                -ms-letter-spacing: 0.01em;
+                letter-spacing: 0.01em;
+                margin-bottom: 8px;
+              }
+
+              .css-8tmwdp {
+                font-size: 28px;
+              }
+              </style>
+              <h1 class="css-8tmwdp">Arseny Garelyshev, <!-- -->Fullstack Software Developer</h1>
+              <style data-emotion-css="1b45bre">.css-1b45bre {
+                box-sizing: border-box;
+                margin: 0;
+                min-width: 0;
+                font-family: InterPDF, -apple-system, sans-serif;
+                font-weight: 600;
+                line-height: 1.4;
+                color: #434343;
+                font-weight: 600;
+                line-height: 1.4;
+                font-family: InterPDF, -apple-system, sans-serif;
+                font-size: 20px;
+                -webkit-letter-spacing: 0.01em;
+                -moz-letter-spacing: 0.01em;
+                -ms-letter-spacing: 0.01em;
+                letter-spacing: 0.01em;
+              }
+
+              .css-1b45bre {
+                font-size: 28px;
+              }
+              </style>
+              <h2 class="css-1b45bre">I&#x27;m a software developer from Russia, looking into moving to Scandinavian
+                countries.
+              </h2></header>
+            <style data-emotion-css="vurnku">.css-vurnku {
+              box-sizing: border-box;
+              margin: 0;
+              min-width: 0;
+            }</style>
+            <div class="pdf-page-container css-vurnku">
+              <div class="pdf-page-column css-vurnku">
+                <style data-emotion-css="17iqz2r">.css-17iqz2r {
+                  box-sizing: border-box;
+                  margin: 0;
+                  min-width: 0;
+                  margin-bottom: 30px;
+                }</style>
+                <section class="css-17iqz2r">
+                  <style data-emotion-css="my2z0v">.css-my2z0v {
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    font-family: InterPDF, -apple-system, sans-serif;
+                    font-weight: 600;
+                    line-height: 1.4;
+                    color: #666666;
+                    font-weight: 600;
+                    line-height: 1.4;
+                    font-family: InterPDF, -apple-system, sans-serif;
+                    -webkit-box-flex: 0;
+                    -webkit-flex-grow: 0;
+                    -ms-flex-positive: 0;
+                    flex-grow: 0;
+                    -webkit-flex-shrink: 0;
+                    -ms-flex-negative: 0;
+                    flex-shrink: 0;
+                    width: 100%;
+                    font-size: 16px;
+                    margin-bottom: 24px;
+                  }
+
+                  .css-my2z0v {
+                    width: 220px;
+                  }
+                  </style>
+                  <h2 class="css-my2z0v">Work Experience</h2>
+                  <style data-emotion-css="1iayv57">.css-1iayv57 {
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    margin-bottom: 24px;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    page-break-inside: avoid;
+                  }</style>
+                  <div class="css-1iayv57">
+                    <style data-emotion-css="53rxg1">.css-53rxg1 {
+                      box-sizing: border-box;
+                      margin: 0;
+                      min-width: 0;
+                      font-family: InterPDF, -apple-system, sans-serif;
+                      line-height: 24px;
+                      font-weight: 300;
+                      color: #666666;
+                      font-size: 18px;
+                      -webkit-flex-shrink: 0;
+                      -ms-flex-negative: 0;
+                      flex-shrink: 0;
+                      -webkit-box-flex: 0;
+                      -webkit-flex-grow: 0;
+                      -ms-flex-positive: 0;
+                      flex-grow: 0;
+                      width: 220px;
+                      padding-right: 16px;
+                      display: none;
+                    }
+
+                    .css-53rxg1 {
+                      display: block;
+                    }
+                    </style>
+                    <div class="css-53rxg1"><span>Oct 2020<!-- --> - Current</span></div>
+                    <div class="css-vurnku">
+                      <style data-emotion-css="16poz2o">.css-16poz2o {
+                        box-sizing: border-box;
+                        margin: 0;
+                        min-width: 0;
+                        font-family: InterPDF, -apple-system, sans-serif;
+                        font-weight: 600;
+                        line-height: 1.4;
+                        color: #2A3235;
+                        font-weight: 600;
+                        line-height: 1.35;
+                        font-family: InterPDF, -apple-system, sans-serif;
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                      }</style>
+                      <h2 class="css-16poz2o">
+                        <style data-emotion-css="1wafmg3">.css-1wafmg3 {
+                          box-sizing: border-box;
+                          margin: 0;
+                          min-width: 0;
+                          color: inherit;
+                          -webkit-text-decoration: inherit;
+                          text-decoration: inherit;
+                          font-size: inherit;
+                          font-weight: inherit;
+                        }
+
+                        .css-1wafmg3:hover {
+                          opacity: 0.7;
+                        }</style>
+                        <a href="https://lifekeyshealth.com" target="_blank" rel="noopener noreferrer nofollow ugc"
+                           class="css-1wafmg3">Lifekeys, Developer</a></h2>
+                      <style data-emotion-css="rstgsv">.css-rstgsv {
+                        box-sizing: border-box;
+                        margin: 0;
+                        min-width: 0;
+                        font-family: InterPDF, -apple-system, sans-serif;
+                        line-height: 1.6;
+                        font-weight: 300;
+                        color: #666666;
+                        font-size: 18px;
+                        display: block;
+                        margin-bottom: 10px;
+                      }
+
+                      .css-rstgsv {
+                        display: none;
+                      }
+                      </style>
+                      <div class="css-rstgsv"><span>Oct 2020<!-- --> - Current</span></div>
+                      <div class="css-vurnku">
+                        <div class="css-vurnku">
+                          <style data-emotion-css="14ilcqz">.css-14ilcqz {
+                            box-sizing: border-box;
+                            margin: 0;
+                            min-width: 0;
+                            font-family: InterPDF, -apple-system, sans-serif;
+                            line-height: 1.6;
+                            font-weight: 300;
+                            color: #434343;
+                            font-size: 18px;
+                            margin-bottom: 8px;
+                          }
+
+                          .css-14ilcqz:not(:first-of-type) {
+                            margin-bottom: 0px;
+                          }
+
+                          </style>
+                          <p class="css-14ilcqz">1.5 years building online psychological sessions web services</p>
+                          <p class="css-14ilcqz">Languages used:</p>
+                          <p class="css-14ilcqz">Typescript — (+React\NextJs): 1.5 years</p>
+                          <p class="css-14ilcqz">C# — 1.5 years</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="css-1iayv57">
+                    <div class="css-53rxg1"><span>Apr 2019<!-- --> - <!-- -->Oct 2020</span></div>
+                    <div class="css-vurnku"><h2 class="css-16poz2o"><a href="http://vedisoft.info/" target="_blank"
+                                                                       rel="noopener noreferrer nofollow ugc"
+                                                                       class="css-1wafmg3">Vedisoft<!-- --> , <!-- -->
+                      Software Engineer</a></h2>
+                      <div class="css-rstgsv"><span>Apr 2019<!-- --> - <!-- -->Oct 2020</span></div>
+                      <div class="css-vurnku">
+                        <div class="css-vurnku"><p class="css-14ilcqz">1.5 years bulding softphone CRM integration
+                          system</p>
+                          <p class="css-14ilcqz">Languages used:</p>
+                          <p class="css-14ilcqz">Golang — 1 year</p>
+                          <p class="css-14ilcqz">Typescript — (+Angular): 1 year</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="css-17iqz2r"><h2 class="css-my2z0v">Education</h2>
+                  <div class="css-1iayv57">
+                    <div class="css-53rxg1"><span>Sep 2015<!-- --> - <!-- -->Jul 2020</span></div>
+                    <div class="css-vurnku"><h2 class="css-16poz2o"><a href="https://urfu.ru/en" target="_blank"
+                                                                       rel="noopener noreferrer nofollow ugc"
+                                                                       class="css-1wafmg3">Ural Federal University
+                      <!-- --> , <!-- -->Bachelors Computer Science</a></h2>
+                      <div class="css-rstgsv"><span>Sep 2015<!-- --> - <!-- -->Jul 2020</span></div>
+                      <div class="css-vurnku">
+                        <div class="css-vurnku"><p class="css-14ilcqz">4-year Bachelor&#x27;s in “Applied IT”
+                          (basically, CS with 3/4 the math)</p>
+                          <p class="css-14ilcqz">Languages used:</p>
+                          <p class="css-14ilcqz">Javascript — 1 year</p>
+                          <p class="css-14ilcqz">Java — 1 year</p>
+                          <p class="css-14ilcqz">Python — 2 years self-taught</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <style data-emotion-css="8j6afd">.css-8j6afd {
+                  box-sizing: border-box;
+                  margin: 0;
+                  min-width: 0;
+                  margin-bottom: 30px;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-flex-wrap: wrap;
+                  -ms-flex-wrap: wrap;
+                  flex-wrap: wrap;
+                  page-break-inside: avoid;
+                }
+
+                .css-8j6afd:last-of-type {
+                  margin-bottom: 0 !important;
+                }
+
+                .css-8j6afd {
+                  -webkit-flex-wrap: nowrap;
+                  -ms-flex-wrap: nowrap;
+                  flex-wrap: nowrap;
+                }
+                </style>
+                <section class="css-8j6afd"><h2 class="css-my2z0v">Languages</h2>
+                  <style data-emotion-css="1g9t9ys">.css-1g9t9ys {
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    margin-bottom: 20px;
+                    display: grid;
+                    grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
+                    -webkit-box-flex: 1;
+                    -webkit-flex-grow: 1;
+                    -ms-flex-positive: 1;
+                    flex-grow: 1;
+                  }</style>
+                  <div class="css-1g9t9ys">
+                    <style data-emotion-css="1ipnnhj">.css-1ipnnhj {
+                      box-sizing: border-box;
+                      margin: 0;
+                      min-width: 0;
+                      margin-bottom: 16px;
+                      padding-right: 16px;
+                    }</style>
+                    <div class="css-1ipnnhj">
+                      <style data-emotion-css="1e91pfq">.css-1e91pfq {
+                        box-sizing: border-box;
+                        margin: 0;
+                        min-width: 0;
+                        font-family: InterPDF, -apple-system, sans-serif;
+                        line-height: 1.6;
+                        font-weight: 600;
+                        color: #2A3235;
+                        font-size: 18px;
+                        margin-bottom: 7px;
+                      }</style>
+                      <div class="css-1e91pfq">English</div>
+                      <style data-emotion-css="1f6jqr5">.css-1f6jqr5 {
+                        box-sizing: border-box;
+                        margin: 0;
+                        min-width: 0;
+                        font-family: InterPDF, -apple-system, sans-serif;
+                        line-height: 1.6;
+                        font-weight: 300;
+                        color: #434343;
+                        font-size: 18px;
+                        font-size: 16px;
+                      }</style>
+                      <div class="css-1f6jqr5">Approx. proficiency: C1</div>
+                    </div>
+                    <div class="css-1ipnnhj">
+                      <div class="css-1e91pfq">Russian</div>
+                      <div class="css-1f6jqr5">Native</div>
+                    </div>
+                  </div>
+                </section>
+                <section class="css-8j6afd"><h2 class="css-my2z0v">Languages &amp; Frameworks Used Recently</h2>
+                  <style data-emotion-css="9bryss">.css-9bryss {
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    -webkit-box-flex: 1;
+                    -webkit-flex-grow: 1;
+                    -ms-flex-positive: 1;
+                    flex-grow: 1;
+                  }</style>
+                  <ul class="css-9bryss">
+                    <style data-emotion-css="1ilnuwl">.css-1ilnuwl {
+                      box-sizing: border-box;
+                      margin: 0;
+                      min-width: 0;
+                      font-family: InterPDF, -apple-system, sans-serif;
+                      line-height: 1.6;
+                      font-weight: 300;
+                      color: #434343;
+                      font-size: 18px;
+                      display: inline-block;
+                      background-color: #AF38F8;
+                      color: #ffffff;
+                      padding: 5px 18px;
+                      margin-right: 3px;
+                      margin-bottom: 12px;
+                      font-size: 14px;
+                    }</style>
+                    <li class="css-1ilnuwl">Typescript</li>
+                    <li class="css-1ilnuwl">C#</li>
+                    <li class="css-1ilnuwl">NextJS</li>
+                    <li class="css-1ilnuwl">PostgreSQL</li>
+                    <li class="css-1ilnuwl">Golang</li>
+                    <li class="css-1ilnuwl">Git</li>
+                  </ul>
+                </section>
+                <section class="css-8j6afd"><h2 class="css-my2z0v">Have experience in</h2>
+                  <div class="css-1g9t9ys">
+                    <div class="css-1ipnnhj">
+                      <div class="css-1e91pfq">Technologies</div>
+                      <div class="css-1f6jqr5">
+                        <div>AWS</div>
+                        <div>Jest</div>
+                        <div>OpenID</div>
+                      </div>
+                    </div>
+                    <div class="css-1ipnnhj">
+                      <div class="css-1e91pfq">Areas of work</div>
+                      <div class="css-1f6jqr5">
+                        <div>Payment systems</div>
+                        <div>Video conferencing</div>
+                        <div>SSO</div>
+                      </div>
+                    </div>
+                    <div class="css-1ipnnhj">
+                      <div class="css-1e91pfq">Other</div>
+                      <div class="css-1f6jqr5">
+                        <div>i18n</div>
+                        <div>Memes</div>
+                        <div>Web design</div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
