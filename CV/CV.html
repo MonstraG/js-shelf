@@ -71,6 +71,8 @@
 			html,
 			body {
 				width: 1000px;
+				max-height: calc(297 * 1000px / 210);
+				overflow: hidden;
 			}
 
 			* {
@@ -83,7 +85,7 @@
 					"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
 					sans-serif;
 				color: #000;
-				font-size: 14px;
+				font-size: 16px;
 				font-weight: 400;
 				line-height: 1.5;
 				background-color: #f2f7fc;
@@ -95,13 +97,22 @@
 				font-kerning: normal;
 			}
 
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-weight: 600;
+			}
+
 			.paper {
-				background-color: #ffffff;
+				background-color: #fff;
 				padding: 1.9cm 1.32cm 3.67cm;
 			}
 
 			.header {
-				margin-bottom: 48px;
+				margin-bottom: 40px;
 			}
 
 			.contactWrapper {
@@ -128,11 +139,15 @@
 				padding-right: 48px;
 			}
 
-			.contactText {
-				line-height: 1.6;
-				font-weight: 300;
+			.contactDetails,
+			.subtitle,
+			.occupationDescription,
+			.miscSectionColumnText {
 				color: #434343;
-				font-size: 18px;
+			}
+
+			.contactDetails {
+				font-size: 1.125em;
 			}
 
 			.subtleLink {
@@ -147,38 +162,43 @@
 				opacity: 0.7;
 			}
 
-			.name,
-			.subtitle {
-				font-weight: 600;
-				line-height: 1.4;
-			}
-
 			.name {
-				color: #2a3235;
-				font-size: 28px;
+				font-size: 1.75em;
 				letter-spacing: 0.01em;
 				margin: 0 0 8px;
 			}
 
 			.subtitle {
 				margin: 0;
-				color: #434343;
-				font-size: 24px;
+			}
+
+			.name,
+			.subtitle {
+				line-height: 1.4;
+			}
+
+			.name,
+			.columnTitle {
+				color: #2a3235;
 			}
 
 			.occupationSection {
 				margin: 0 0 30px;
 			}
 
-			.sectionTitle {
-				font-weight: 600;
-				line-height: 1.4;
-				color: #666666;
-				flex-grow: 0;
-				flex-shrink: 0;
-				font-size: 16px;
-				margin: 0 0 24px;
+			.sectionTitle,
+			.dateSpan {
+				/* same width for left column */
 				width: 220px;
+				flex-shrink: 0;
+				flex-grow: 0;
+
+				color: #666;
+			}
+
+			.sectionTitle {
+				margin: 0 0 24px;
+				font-size: 16px;
 			}
 
 			.sectionGrid {
@@ -188,30 +208,17 @@
 			}
 
 			.dateSpan {
-				line-height: 24px;
-				font-weight: 300;
-				color: #666666;
 				font-size: 18px;
-				flex-shrink: 0;
-				flex-grow: 0;
-				width: 220px;
 				padding-right: 16px;
 				display: block;
 			}
 
-			.occupationTitle {
-				font-weight: 600;
-				color: #2a3235;
-				line-height: 1.35;
+			.columnTitle {
 				font-size: 18px;
 				margin: 0 0 10px;
 			}
 
 			.occupationDescription {
-				line-height: 1.6;
-				font-weight: 300;
-				color: #434343;
-				font-size: 18px;
 				margin: 0 0 8px;
 			}
 
@@ -242,44 +249,23 @@
 				padding-right: 16px;
 			}
 
-			.miscSectionColumnTitle {
-				line-height: 1.6;
-				font-weight: 600;
-				color: #2a3235;
-				font-size: 18px;
-				margin-bottom: 7px;
-			}
-
-			.miscSectionColumnText {
-				box-sizing: border-box;
+			ul.colorBoxList {
 				margin: 0;
-				min-width: 0;
-
-				line-height: 1.6;
-				font-weight: 300;
-				color: #434343;
-				font-size: 16px;
-			}
-
-			.miscSectionList {
-				box-sizing: border-box;
-				margin: 0;
-				min-width: 0;
 				list-style: none;
 				padding: 0;
-				flex-grow: 1;
 			}
 
-			.miscSectionListItem {
-				line-height: 1.6;
-				font-weight: 300;
+			.colorBoxList li {
 				display: inline-block;
 				background-color: #af38f8;
 				color: #fff;
-				padding: 5px 18px;
+				padding: 6px 18px;
 				margin-right: 3px;
 				margin-bottom: 12px;
-				font-size: 16px;
+			}
+
+			section:last-of-type > * {
+				margin-bottom: 0;
 			}
 		</style>
 	</head>
@@ -293,14 +279,14 @@
 						alt="avatar"
 					/>
 					<div class="contactDetails">
-						<div class="contactText">Yekaterinburg, Russia</div>
-						<div class="contactText">
+						<span>Yekaterinburg, Russia</span>
+						<span>
 							<a href="mailto:monstrag@gmail.com" target="_blank" class="subtleLink"
 								>monstrag@gmail.com</a
 							>
-						</div>
-						<div class="contactText">+7 (922) 164-88-48</div>
-						<div class="contactText">
+						</span>
+						<span>+7 (922) 164-88-48</span>
+						<span>
 							<a
 								href="https://linkedin.com/in/arseny-garelyshev-086275199"
 								target="_blank"
@@ -308,7 +294,7 @@
 								class="subtleLink"
 								>linkedin.com/in/arseny-garelyshev-086275199</a
 							>
-						</div>
+						</span>
 					</div>
 				</div>
 				<h1 class="name">Arseny Garelyshev, Fullstack Software Developer</h1>
@@ -324,7 +310,7 @@
 					<div class="sectionGrid">
 						<div class="dateSpan">Oct 2020 - Current</div>
 						<div>
-							<h2 class="occupationTitle">
+							<h4 class="columnTitle">
 								<a
 									href="https://lifekeyshealth.com"
 									target="_blank"
@@ -333,7 +319,7 @@
 								>
 									Lifekeys, Developer
 								</a>
-							</h2>
+							</h4>
 							<p class="occupationDescription">
 								1.5 years building online psychological sessions web services
 							</p>
@@ -347,7 +333,7 @@
 					<div class="sectionGrid">
 						<div class="dateSpan">Apr 2019 - Oct 2020</div>
 						<div>
-							<h2 class="occupationTitle">
+							<h4 class="columnTitle">
 								<a
 									href="http://vedisoft.info/"
 									target="_blank"
@@ -356,7 +342,7 @@
 								>
 									Vedisoft, Software Engineer
 								</a>
-							</h2>
+							</h4>
 
 							<p class="occupationDescription">
 								1.5 years building softphone CRM integration system
@@ -369,11 +355,11 @@
 				</section>
 
 				<section class="occupationSection">
-					<h2 class="sectionTitle">Education</h2>
+					<h3 class="sectionTitle">Education</h3>
 					<div class="sectionGrid">
 						<div class="dateSpan">Sep 2015 - Jul 2020</div>
 						<div>
-							<h2 class="occupationTitle">
+							<h4 class="columnTitle">
 								<a
 									href="https://urfu.ru/en"
 									target="_blank"
@@ -382,7 +368,7 @@
 								>
 									Ural Federal University, Bachelors Computer Science
 								</a>
-							</h2>
+							</h4>
 
 							<p class="occupationDescription">
 								4-year Bachelor&#x27;s in “Applied IT” (basically, CS with 3/4 the
@@ -397,36 +383,36 @@
 				</section>
 
 				<section class="miscSection">
-					<h2 class="sectionTitle">Languages</h2>
+					<h3 class="sectionTitle">Languages</h3>
 					<div class="miscSectionGrid">
 						<div class="miscSectionContent">
-							<div class="miscSectionColumnTitle">English</div>
+							<h4 class="columnTitle">English</h4>
 							<div class="miscSectionColumnText">Approx. proficiency: C1</div>
 						</div>
 						<div class="miscSectionContent">
-							<div class="miscSectionColumnTitle">Russian</div>
+							<h4 class="columnTitle">Russian</h4>
 							<div class="miscSectionColumnText">Native</div>
 						</div>
 					</div>
 				</section>
 
 				<section class="miscSection">
-					<h2 class="sectionTitle">Languages &amp; Frameworks Used Recently</h2>
-					<ul class="miscSectionList">
-						<li class="miscSectionListItem">Typescript</li>
-						<li class="miscSectionListItem">C#</li>
-						<li class="miscSectionListItem">NextJS</li>
-						<li class="miscSectionListItem">PostgreSQL</li>
-						<li class="miscSectionListItem">Golang</li>
-						<li class="miscSectionListItem">Git</li>
+					<h3 class="sectionTitle">Languages &amp; Frameworks Used Recently</h3>
+					<ul class="colorBoxList">
+						<li>Typescript</li>
+						<li>C#</li>
+						<li>NextJS</li>
+						<li>PostgreSQL</li>
+						<li>Golang</li>
+						<li>Git</li>
 					</ul>
 				</section>
 
 				<section class="miscSection">
-					<h2 class="sectionTitle">Have experience in</h2>
+					<h3 class="sectionTitle">Have experience in</h3>
 					<div class="miscSectionGrid">
 						<div class="miscSectionContent">
-							<div class="miscSectionColumnTitle">Technologies</div>
+							<h4 class="columnTitle">Technologies</h4>
 							<div class="miscSectionColumnText">
 								<div>AWS</div>
 								<div>Jest</div>
@@ -434,7 +420,7 @@
 							</div>
 						</div>
 						<div class="miscSectionContent">
-							<div class="miscSectionColumnTitle">Areas of work</div>
+							<h4 class="columnTitle">Areas of work</h4>
 							<div class="miscSectionColumnText">
 								<div>Payment systems</div>
 								<div>Video conferencing</div>
@@ -442,7 +428,7 @@
 							</div>
 						</div>
 						<div class="miscSectionContent">
-							<div class="miscSectionColumnTitle">Other</div>
+							<h4 class="columnTitle">Other</h4>
 							<div class="miscSectionColumnText">
 								<div>i18n</div>
 								<div>Memes</div>
