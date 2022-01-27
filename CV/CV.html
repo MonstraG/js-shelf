@@ -166,7 +166,7 @@
 				font-size: 24px;
 			}
 
-			.section {
+			.occupationSection {
 				margin: 0 0 30px;
 			}
 
@@ -218,6 +218,69 @@
 			.occupationDescription:not(:first-of-type) {
 				margin-bottom: 0;
 			}
+
+			.miscSection {
+				margin: 0 0 30px;
+				display: flex;
+				page-break-inside: avoid;
+				flex-wrap: nowrap;
+			}
+
+			.miscSection:last-of-type {
+				margin-bottom: 0 !important;
+			}
+
+			.miscSectionGrid {
+				margin: 0 0 20px;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+				flex-grow: 1;
+			}
+
+			.miscSectionContent {
+				margin: 0 0 16px;
+				padding-right: 16px;
+			}
+
+			.miscSectionColumnTitle {
+				line-height: 1.6;
+				font-weight: 600;
+				color: #2a3235;
+				font-size: 18px;
+				margin-bottom: 7px;
+			}
+
+			.miscSectionColumnText {
+				box-sizing: border-box;
+				margin: 0;
+				min-width: 0;
+
+				line-height: 1.6;
+				font-weight: 300;
+				color: #434343;
+				font-size: 16px;
+			}
+
+			.miscSectionList {
+				box-sizing: border-box;
+				margin: 0;
+				min-width: 0;
+				list-style: none;
+				padding: 0;
+				flex-grow: 1;
+			}
+
+			.miscSectionListItem {
+				line-height: 1.6;
+				font-weight: 300;
+				display: inline-block;
+				background-color: #af38f8;
+				color: #fff;
+				padding: 5px 18px;
+				margin-right: 3px;
+				margin-bottom: 12px;
+				font-size: 16px;
+			}
 		</style>
 	</head>
 	<body>
@@ -256,7 +319,7 @@
 			</header>
 
 			<main>
-				<section class="section">
+				<section class="occupationSection">
 					<h3 class="sectionTitle">Work Experience</h3>
 					<div class="sectionGrid">
 						<div class="dateSpan">Oct 2020 - Current</div>
@@ -305,7 +368,7 @@
 					</div>
 				</section>
 
-				<section class="section">
+				<section class="occupationSection">
 					<h2 class="sectionTitle">Education</h2>
 					<div class="sectionGrid">
 						<div class="dateSpan">Sep 2015 - Jul 2020</div>
@@ -333,162 +396,54 @@
 					</div>
 				</section>
 
-				<style data-emotion-css="8j6afd">
-					.css-8j6afd {
-						box-sizing: border-box;
-						margin: 0;
-						min-width: 0;
-						margin-bottom: 30px;
-						display: -webkit-box;
-						display: -webkit-flex;
-						display: -ms-flexbox;
-						display: flex;
-						-webkit-flex-wrap: wrap;
-						-ms-flex-wrap: wrap;
-						flex-wrap: wrap;
-						page-break-inside: avoid;
-					}
-
-					.css-8j6afd:last-of-type {
-						margin-bottom: 0 !important;
-					}
-
-					.css-8j6afd {
-						-webkit-flex-wrap: nowrap;
-						-ms-flex-wrap: nowrap;
-						flex-wrap: nowrap;
-					}
-				</style>
-				<section class="css-8j6afd">
+				<section class="miscSection">
 					<h2 class="sectionTitle">Languages</h2>
-					<style data-emotion-css="1g9t9ys">
-						.css-1g9t9ys {
-							box-sizing: border-box;
-							margin: 0;
-							min-width: 0;
-							margin-bottom: 20px;
-							display: grid;
-							grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-							-webkit-box-flex: 1;
-							-webkit-flex-grow: 1;
-							-ms-flex-positive: 1;
-							flex-grow: 1;
-						}
-					</style>
-					<div class="css-1g9t9ys">
-						<style data-emotion-css="1ipnnhj">
-							.css-1ipnnhj {
-								box-sizing: border-box;
-								margin: 0;
-								min-width: 0;
-								margin-bottom: 16px;
-								padding-right: 16px;
-							}
-						</style>
-						<div class="css-1ipnnhj">
-							<style data-emotion-css="1e91pfq">
-								.css-1e91pfq {
-									box-sizing: border-box;
-									margin: 0;
-									min-width: 0;
-
-									line-height: 1.6;
-									font-weight: 600;
-									color: #2a3235;
-									font-size: 18px;
-									margin-bottom: 7px;
-								}
-							</style>
-							<div class="css-1e91pfq">English</div>
-							<style data-emotion-css="1f6jqr5">
-								.css-1f6jqr5 {
-									box-sizing: border-box;
-									margin: 0;
-									min-width: 0;
-
-									line-height: 1.6;
-									font-weight: 300;
-									color: #434343;
-									font-size: 18px;
-									font-size: 16px;
-								}
-							</style>
-							<div class="css-1f6jqr5">Approx. proficiency: C1</div>
+					<div class="miscSectionGrid">
+						<div class="miscSectionContent">
+							<div class="miscSectionColumnTitle">English</div>
+							<div class="miscSectionColumnText">Approx. proficiency: C1</div>
 						</div>
-						<div class="css-1ipnnhj">
-							<div class="css-1e91pfq">Russian</div>
-							<div class="css-1f6jqr5">Native</div>
+						<div class="miscSectionContent">
+							<div class="miscSectionColumnTitle">Russian</div>
+							<div class="miscSectionColumnText">Native</div>
 						</div>
 					</div>
 				</section>
 
-				<section class="css-8j6afd">
+				<section class="miscSection">
 					<h2 class="sectionTitle">Languages &amp; Frameworks Used Recently</h2>
-					<style data-emotion-css="9bryss">
-						.css-9bryss {
-							box-sizing: border-box;
-							margin: 0;
-							min-width: 0;
-							list-style: none;
-							margin: 0;
-							padding: 0;
-							-webkit-box-flex: 1;
-							-webkit-flex-grow: 1;
-							-ms-flex-positive: 1;
-							flex-grow: 1;
-						}
-					</style>
-					<ul class="css-9bryss">
-						<style data-emotion-css="1ilnuwl">
-							.css-1ilnuwl {
-								box-sizing: border-box;
-								margin: 0;
-								min-width: 0;
-
-								line-height: 1.6;
-								font-weight: 300;
-								color: #434343;
-								font-size: 18px;
-								display: inline-block;
-								background-color: #af38f8;
-								color: #ffffff;
-								padding: 5px 18px;
-								margin-right: 3px;
-								margin-bottom: 12px;
-								font-size: 14px;
-							}
-						</style>
-						<li class="css-1ilnuwl">Typescript</li>
-						<li class="css-1ilnuwl">C#</li>
-						<li class="css-1ilnuwl">NextJS</li>
-						<li class="css-1ilnuwl">PostgreSQL</li>
-						<li class="css-1ilnuwl">Golang</li>
-						<li class="css-1ilnuwl">Git</li>
+					<ul class="miscSectionList">
+						<li class="miscSectionListItem">Typescript</li>
+						<li class="miscSectionListItem">C#</li>
+						<li class="miscSectionListItem">NextJS</li>
+						<li class="miscSectionListItem">PostgreSQL</li>
+						<li class="miscSectionListItem">Golang</li>
+						<li class="miscSectionListItem">Git</li>
 					</ul>
 				</section>
 
-				<section class="css-8j6afd">
+				<section class="miscSection">
 					<h2 class="sectionTitle">Have experience in</h2>
-					<div class="css-1g9t9ys">
-						<div class="css-1ipnnhj">
-							<div class="css-1e91pfq">Technologies</div>
-							<div class="css-1f6jqr5">
+					<div class="miscSectionGrid">
+						<div class="miscSectionContent">
+							<div class="miscSectionColumnTitle">Technologies</div>
+							<div class="miscSectionColumnText">
 								<div>AWS</div>
 								<div>Jest</div>
 								<div>OpenID</div>
 							</div>
 						</div>
-						<div class="css-1ipnnhj">
-							<div class="css-1e91pfq">Areas of work</div>
-							<div class="css-1f6jqr5">
+						<div class="miscSectionContent">
+							<div class="miscSectionColumnTitle">Areas of work</div>
+							<div class="miscSectionColumnText">
 								<div>Payment systems</div>
 								<div>Video conferencing</div>
 								<div>SSO</div>
 							</div>
 						</div>
-						<div class="css-1ipnnhj">
-							<div class="css-1e91pfq">Other</div>
-							<div class="css-1f6jqr5">
+						<div class="miscSectionContent">
+							<div class="miscSectionColumnTitle">Other</div>
+							<div class="miscSectionColumnText">
 								<div>i18n</div>
 								<div>Memes</div>
 								<div>Web design</div>
