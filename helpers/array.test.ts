@@ -46,3 +46,18 @@ describe("first", () => {
 	it("returns first element of the array", () => expect(Arr.first([0, 1, 2, 3])).toBe(0));
 	it("returns null on empty array", () => expect(Arr.first([])).toBe(null));
 });
+
+describe("last", () => {
+	it("returns last element of the array", () => expect(Arr.last([0, 1, 2, 3])).toBe(3));
+	it("returns null on empty array", () => expect(Arr.last([])).toBe(null));
+});
+
+describe("fork", () => {
+	it("forks input array based on predicate", () =>
+		expect(Arr.fork([1, 2, 3, 4, 5], (el) => el % 2 == 0)).toStrictEqual([
+			[2, 4],
+			[1, 3, 5]
+		]));
+	it("returns two empty arrays on empty array", () =>
+		expect(Arr.fork([], () => true)).toStrictEqual([[], []]));
+});

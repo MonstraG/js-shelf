@@ -27,6 +27,8 @@ export namespace Arr {
 		array.filter((item: T, index: number) => array.indexOf(item) === index);
 
 	export const first = <T>(array: T[]): T | null => (array && array.length > 0 ? array[0] : null);
+	export const last = <T>(array: T[]): T | null =>
+		array && array.length > 0 ? array[array.length - 1] : null;
 
 	//splits array into 2 parts based on predicate, first corresponds to true, second to false
 	export const fork = <T>(
