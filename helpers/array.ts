@@ -72,4 +72,22 @@ export namespace Arr {
 
 	export const diff = <T>(a: T[], b: T[]): T[] => a.filter((e) => !b.includes(e));
 	export const intersect = <T>(a: T[], b: T[]): T[] => a.filter((e) => b.includes(e));
+
+	// [1, 2, 3, 4, 5] => [[1, 2, 3], [4, 5]]
+	export const splitInHalf = <T>(array: T[]): [T[], T[]] => {
+		const halfWayIndex = Math.ceil(array.length / 2);
+		return [array.slice(0, halfWayIndex), array.slice(halfWayIndex)];
+	};
+
+	/// [1, 2, 3, 4, 5] => [1, 2, 3], [4, 5] => [1, 4, 2, 5, 3]
+	export const braid = <T>(array: T[]): T[] =>
+		zip(...splitInHalf(array))
+			.flat()
+			.filter((x) => x != null);
+
+	// splitInGroups([1,2,3,4,5], 2) => [[1, 2], [3, 4], [5]]
+	export const splitInGroups = <T>(array: T[], groupSize: number): T[][] => {
+		const numGroups = Math.ceil(array.length / groupSize);
+		return newArr(numGroups).map((_, i) => array.slice(i * groupSize, (i + 1) * groupSize));
+	};
 }
